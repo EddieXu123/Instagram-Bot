@@ -9,11 +9,11 @@ This bot will log into your instagram account, go to the user of your choice, an
 P.S. It also has a simple way of closing any bot-prevention popups using this simple Finite State Machine:
 
 while there_are_more_posts:
-  # See if there is a pop-up (meaning the bot is being detected) and close it
+  // See if there is a pop-up (meaning the bot is being detected) and close it
   try:
     close_pop_up()  
   
-  # If there is no bot-detecting pop-up, continue
+  // If there is no bot-detecting pop-up, continue
   except NoSuchElementException:
     continue_like_comment()
 

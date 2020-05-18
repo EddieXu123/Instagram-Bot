@@ -3,7 +3,8 @@ from time import sleep
 from selenium.webdriver.common.keys import Keys
 from pynput.keyboard import Key, Controller
 import pyautogui
-from contact import email, password, account, message
+from contact import email, password, account, compliments
+from random import choice
 
 
 class InstagramBot:
@@ -72,9 +73,9 @@ class InstagramBot:
         self.driver.find_element_by_xpath(
             '/html/body/div[4]/div[2]/div/article/div[2]/section[1]/span[2]/button').click()
         sleep(2)  # wait for comment to load
-        # Comment something
+        # Comment one of the 102 possible compliments
         self.driver.find_element_by_xpath(
-            '/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea').send_keys(message)
+            '/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea').send_keys(choice(compliments))
         # Post the comment
         self.driver.find_element_by_xpath(
             '/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/button').click()  # post the comment
@@ -92,7 +93,7 @@ class InstagramBot:
                 '/html/body/div[4]/div[2]/div/article/div[2]/section[1]/span[2]/button').click()
             self.driver.find_element_by_xpath(
                 '/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea').send_keys(
-                message)  # Comment message
+                choice(compliments))  # Comment message
             self.driver.find_element_by_xpath(
                 '/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/button').click()  # post the comment
             sleep(1)  # wait for comment to post

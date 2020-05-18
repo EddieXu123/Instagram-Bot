@@ -1,5 +1,5 @@
 email = "tenbotsinten@gmail.com"  # Enter your instagram username/email
-password = "waterisgood"  # Enter your password here
+password = "waterisgood"  # Enter your password her
 account = "kyliejenner"  # Enter the desired account here
 
 # I looked up 100 compliments and put them into an array to generate random compliments to post

@@ -1,4 +1,5 @@
 from selenium import webdriver
+import webdriver_manager.chrome
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
@@ -11,7 +12,7 @@ from random import choice
 class InstagramBot:
     def __init__(self):
         # Create a browser we can play on
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(webdriver_manager.chrome.ChromeDriverManager().install())
 
     def log_on_like_comment(self):
         keyboard = Controller()
